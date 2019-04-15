@@ -2,7 +2,7 @@ version: "3.1"
 
 services:
   web:
-    image: "my-registry:55000/pluralsight-admin-web-image"
+    image: "my-registry:55000/pluralsight-admin-web-image-${API_BUILD_NUMBER-10}"
     #ports:
     #  - "8080:80"
   api:
@@ -10,9 +10,10 @@ services:
     #ports:
     #  - "3001:3001"
   test:
-    image: "my-registry:55000/pluralsight-admin-integration-image"
+    image: "my-registry:55000/gen:pluralsight-admin-integration-image-${BUILD_NUMBER-10}"
     build: "./Pluralsight-Admin-Test"
     environment:
       - NETWORK_VAR=api
+      - TEAMCITY_PROJECT_NAME
     depends_on:
       - "api"
