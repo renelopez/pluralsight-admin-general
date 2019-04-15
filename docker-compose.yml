@@ -11,6 +11,6 @@ services:
     #  - "3001:3001"
   test:
     image: "my-registry:55000/pluralsight-admin-integration-image"
-    build: .
+    build: "./Pluralsight-Admin-Test"
     environment:
       - NETWORK_VAR=api
