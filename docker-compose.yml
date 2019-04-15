@@ -15,5 +15,6 @@ services:
     environment:
       - NETWORK_VAR=api
       - TEAMCITY_PROJECT_NAME
+      - TEAMCITY_VERSION
     depends_on:
       - "api"
