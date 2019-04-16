@@ -3,10 +3,16 @@ version: "3.1"
 services:
   web:
     image: "my-registry:55000/pluralsight-admin-web-image-${API_BUILD_NUMBER-10}"
+    build:
+      context: ./Pluralsight-Admin-Web
+      dockerfile: ./.docker/node.development.web.dockerfile
     #ports:
     #  - "8080:80"
   api:
-    image: "my-registry:55000/pluralsight-admin-api-image"
+    image: "my-registry:55000/pluralsight-admin-api-image-${API_BUILD_NUMBER-10}"
+    build:
+      context: ./Pluralsight-Admin-Api
+      dockerfile: ./.docker/node.development.api.dockerfile
     #ports:
     #  - "3001:3001"
   test:
