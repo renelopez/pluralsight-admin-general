@@ -10,7 +10,7 @@ services:
     image: "my-registry:55000/pluralsight-admin-api-image-${API_BUILD_NUMBER-10}"
     #build:
     #  context: ./Pluralsight-Admin-Api
-    #   dockerfile: ./.docker/node.development.api.dockerfile
+    #  dockerfile: ./.docker/node.development.api.dockerfile
   test:
     image: "my-registry:55000/gen:pluralsight-admin-integration-image-${BUILD_NUMBER-10}"
     build: "./Pluralsight-Admin-Test"
