@@ -3,7 +3,7 @@ version: "3.1"
 services:
   web:
     image: "my-registry:55000/pluralsight-admin-web-image-${BUILD_NUMBER-10}"
-    #build:
+    # build:
     #  context: ./Pluralsight-Admin-Web
     #  dockerfile: ./.docker/node.development.web.dockerfile
   api:
