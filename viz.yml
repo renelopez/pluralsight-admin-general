@@ -12,5 +12,5 @@ services:
       placement:
         constraints:
           - node.role == manager
-    environment:
-      - HOST=localhost
+    #environment:
+    #  - HOST=localhost
