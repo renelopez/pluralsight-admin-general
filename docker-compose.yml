@@ -2,17 +2,17 @@ version: "3.1"
 # Removing ports as they wont be needed on CI
 services:
   web:
-    image: "my-registry:55000/gen:pluralsight-admin-web-image-${BUILD_NUMBER-10}"
+    image: "my-registry:55000/gen:pluralsight-admin-web-image-ci-${BUILD_NUMBER-10}"
     # build:
     #  context: ./Pluralsight-Admin-Web
     #  dockerfile: ./.docker/node.development.web.dockerfile
   api:
-    image: "my-registry:55000/gen:pluralsight-admin-api-image-${API_BUILD_NUMBER-10}"
+    image: "my-registry:55000/gen:pluralsight-admin-api-image-ci-${API_BUILD_NUMBER-10}"
     #build:
     #  context: ./Pluralsight-Admin-Api
     #  dockerfile: ./.docker/node.development.api.dockerfile
   test:
-    image: "my-registry:55000/gen:pluralsight-admin-integration-image-${API_BUILD_NUMBER-10}"
+    image: "my-registry:55000/gen:pluralsight-admin-integration-image-ci-${API_BUILD_NUMBER-10}"
     build: "./Pluralsight-Admin-Test"
     environment:
       - NETWORK_VAR=api
